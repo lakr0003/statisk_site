@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/************************** menu ******************************/
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: grey;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+  color: #ff7b00;
+}
+
+.menu a:hover {
+  background-color: #ff7b00;
+  color: grey;
+  border-radius: 20px;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/******************* generelt *************************************/
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.category_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.kategori {
+  padding: 25px;
+  background-color: grey;
+  color: #ff7b00;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.kategori:hover {
+  color: #ff7b00;
+  box-shadow: 5px 10px;
+  border-radius: 20px;
+}
+
+h1 {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
