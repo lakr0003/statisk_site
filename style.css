@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /************************** menu ******************************/
 header {
   position: sticky;
@@ -16,6 +22,7 @@ header {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
   border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -58,6 +65,11 @@ nav {
   height: 20px;
   cursor: pointer;
 }
+#aktiv {
+  background-color: #ff7b00;
+  color: grey;
+  border-radius: 20px;
+}
 
 /******************* generelt *************************************/
 
@@ -66,6 +78,16 @@ main {
   margin: auto;
 }
 
+h1 {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/********************* Home Page *************************/
 .category_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -86,7 +108,55 @@ main {
   border-radius: 20px;
 }
 
-h1 {
-  padding-top: 30px;
-  padding-bottom: 20px;
+/********************* Product List *************************/
+
+.product_list_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 15px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: subgrid;
+  position: relative;
+  gap: 15px;
+}
+
+.discount {
+  background-color: red;
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  padding: 15px;
+}
+
+.soldout {
+  background-color: grey;
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  padding: 20px;
+}
+
+.imgsoldout {
+  filter: grayscale(35%);
+}
+
+.catgtekst {
+  color: grey;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.hover:hover {
+  transform: scale(1.1);
+}
+
+.underline {
+  text-decoration: underline;
 }
