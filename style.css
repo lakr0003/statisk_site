@@ -21,7 +21,7 @@ header {
   background-color: grey;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
-  border-radius: 20px;
+  border-radius: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -56,7 +56,7 @@ nav {
 
 .menu a:hover {
   background-color: #ff7b00;
-  color: grey;
+  color: black;
   border-radius: 20px;
 }
 
@@ -70,10 +70,15 @@ nav {
   color: grey;
   border-radius: 20px;
 }
+#aktiv:hover {
+  color: black;
+}
 
 /******************* generelt *************************************/
 
 main {
+  padding-left: 20px;
+  padding-right: 20px;
   max-width: 1200px;
   margin: auto;
 }
@@ -85,6 +90,33 @@ h1 {
 }
 h2 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+h3 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  padding-left: 10px;
+}
+.breadcrumb li {
+  padding-left: 10px;
+  color: #ff7b00;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline #ff7b00;
+  color: #ff7b00;
+}
+
+footer {
+  padding: 20px;
 }
 
 /********************* Home Page *************************/
@@ -110,38 +142,23 @@ h2 {
 
 /********************* Product List *************************/
 
-.product_list_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 15px;
-}
-
-.card {
-  display: grid;
-  grid-template-columns: subgrid;
-  position: relative;
-  gap: 15px;
-}
-
 .discount {
   background-color: red;
   position: absolute;
-  bottom: 10%;
-  right: 20%;
+  bottom: 0;
+  right: 0;
   padding: 15px;
 }
 
 .soldout {
   background-color: grey;
   position: absolute;
-  top: 30%;
-  right: 30%;
+  top: 0;
+  left: 0;
   padding: 20px;
 }
-
 .imgsoldout {
-  filter: grayscale(35%);
+  filter: grayscale(65%);
 }
 
 .catgtekst {
@@ -153,10 +170,115 @@ a {
   text-decoration: none;
 }
 
-.hover:hover {
-  transform: scale(1.1);
-}
-
 .underline {
   text-decoration: underline;
+}
+
+.underline:hover {
+  text-decoration: underline #ff7b00;
+}
+
+/*************************************** product *********************************/
+.buy {
+  background-color: rgba(128, 128, 128, 0.277);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.knap {
+  background-color: #ff7b00;
+  color: rgb(73, 73, 73);
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  width: 200px;
+}
+.knap:hover {
+  color: black;
+  box-shadow: 5px 10px grey;
+  border-radius: 20px;
+}
+
+#center {
+  align-content: center;
+}
+
+.style {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+#size {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/****************************** media ****************************/
+@media (min-width: 400px) {
+  .product_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  .card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    position: relative;
+    gap: 20px;
+  }
+  /************** product ************/
+  .product_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card2 {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    position: relative;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .product_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 5;
+    gap: 20px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    position: relative;
+    gap: 15px;
+  }
+  /*************** product ************/
+  .product_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card2 {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    position: relative;
+    gap: 15px;
+    align-items: center;
+  }
 }
