@@ -82,9 +82,6 @@ main {
   max-width: 1200px;
   margin: auto;
 }
-body {
-  background-color: rgba(128, 128, 128, 0.216);
-}
 
 h1 {
   padding-top: 30px;
@@ -184,11 +181,6 @@ a {
 }
 
 /*************************************** product *********************************/
-.buy {
-  background-color: rgba(128, 128, 128, 0.277);
-  padding: 20px;
-  border-radius: 20px;
-}
 
 .knap {
   background-color: #ff7b00;
@@ -202,10 +194,6 @@ a {
   color: black;
   box-shadow: 5px 10px grey;
   border-radius: 20px;
-}
-
-#center {
-  align-content: center;
 }
 
 .style {
@@ -234,12 +222,6 @@ a {
     grid-row: span 4;
     position: relative;
     gap: 20px;
-
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
   }
   /************** product ************/
   .product_container {
@@ -247,22 +229,29 @@ a {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 20px;
-    align-items: center;
   }
 
-  .card2 {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: span 2;
+  .product_info {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
     gap: 15px;
-    align-items: center;
+  }
 
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
+  .product_buy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: orange;
+    padding: 20px;
+    gap: 25px;
+    border-radius: 20px;
+  }
+
+  #center {
+    align-content: center;
+    padding-top: 20px;
   }
 }
 /****************************** desktop ****************************/
@@ -280,34 +269,34 @@ a {
     grid-row: span 5;
     position: relative;
     gap: 15px;
-
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
   }
   /*************** product ************/
   .product_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 1fr;
     grid-template-rows: auto;
     gap: 20px;
-    align-items: center;
   }
 
-  .card2 {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: span 2;
+  .product_info {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
     gap: 15px;
-    align-items: center;
+  }
 
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
+  .product_buy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: orange;
+    padding: 20px;
+    gap: 25px;
+    border-radius: 20px;
+  }
+  #center {
+    align-content: center;
+    padding-top: 20px;
   }
 }
