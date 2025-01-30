@@ -82,6 +82,9 @@ main {
   max-width: 1200px;
   margin: auto;
 }
+body {
+  background-color: rgba(128, 128, 128, 0.216);
+}
 
 h1 {
   padding-top: 30px;
@@ -148,6 +151,7 @@ footer {
   bottom: 0;
   right: 0;
   padding: 15px;
+  border-radius: 7.5px;
 }
 
 .soldout {
@@ -156,6 +160,7 @@ footer {
   top: 0;
   left: 0;
   padding: 20px;
+  border-radius: 7.5px;
 }
 .imgsoldout {
   filter: grayscale(65%);
@@ -229,6 +234,12 @@ a {
     grid-row: span 4;
     position: relative;
     gap: 20px;
+
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
   }
   /************** product ************/
   .product_container {
@@ -246,9 +257,15 @@ a {
     position: relative;
     gap: 15px;
     align-items: center;
+
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
   }
 }
-
+/****************************** desktop ****************************/
 @media (min-width: 900px) {
   .product_list_container {
     display: grid;
@@ -263,6 +280,12 @@ a {
     grid-row: span 5;
     position: relative;
     gap: 15px;
+
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
   }
   /*************** product ************/
   .product_container {
@@ -280,5 +303,11 @@ a {
     position: relative;
     gap: 15px;
     align-items: center;
+
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
   }
 }
