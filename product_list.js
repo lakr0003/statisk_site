@@ -7,11 +7,11 @@ fetch(`https://kea-alt-del.dk/t7/api/products`)
 function showList(products) {
   //data er ændret til products fordi vi har hentet datean og nu skal vi benyttes produktdataen fra dataen
   console.log(products);
-  let markup = "";
-  products //products.map for hvert produkt (product =>) puttes et nyt produkt ind i variablen markup
-    .map((product) => {
-      markup += `
-        <div class="card">
+  const markup = products
+    .map(
+      //products.map for hvert produkt (product =>) puttes et nyt produkt ind i variablen markup
+      (product) => `
+       <div class="card">
             <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="blå trøje">
                 <h2>${product.productdisplayname}</h2>
             </a>
@@ -20,9 +20,11 @@ function showList(products) {
             <a href="product.html">
                 <p class="underline">Read more</p>
             </a>
-        </div>`;
-    })
-    .join("");
+        </div>
+      `
+    )
+
+    .join(""); // mellem listerne(array) er der komma, vha join vil der ikke være komma længere.
   console.log(markup);
   productContainer.innerHTML = markup;
 }
