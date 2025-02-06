@@ -1,4 +1,4 @@
-let productId = 1163;
+let productId = new URLSearchParams(window.location.search).get("id");
 let productContainer = document.querySelector(".product_container");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
@@ -7,8 +7,11 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
 //then (så) benyttes dataen i følgende skriv
 function showProduct(data) {
   productContainer.innerHTML = `
-     <div>
+            <div>
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="blå trøje">
+                    <div class="soldout2 ${data.soldout && "yesSoldout"}">
+                        <p>SOLD OUT</p>
+                    </div> 
             </div>
             <div class="product_info">
                 <h2>Product Information</h2>
@@ -24,19 +27,27 @@ function showProduct(data) {
                 <h3>Brand</h3>
                 <p>${data.brandname}</p>
                 <br>
+                <h3>Stock Status</h3>
+                <p ${data.soldout && "yesSoldout"}>
+                ${data.soldout ? "Out Of Stock" : ""} ${!data.soldout ? "In Stock" : ""} 
+                </p>
+                <br>
                 <h3>Inventory Number</h3>
                 <p>${productId}</p>
-                <br>
             </div>
 
             <div class="product_buy">
                 <div>
-                    <h2>${data.productdisplayname}</h2>
+                    <h2 class="display">${data.productdisplayname}</h2>
                     <br>
-                    <div>
-                        <h3>Price</h3>
-                        <p>${data.price}</p>
-                    </div>
+                    <h3>Price</h3>
+                    <div class="grid_1_1">
+                        <p class="${data.discount && "disctekst"}">DKK ${data.price},-</p> 
+                            <div class="discount2 ${data.discount && "yesDiscount"}">
+                            <p>${data.discount}%</p>
+                        </div>    
+                    </div> 
+                    <p class="tilbud ${data.discount && "yesDiscount"}"> NOW DKK ${Math.floor(data.price - (data.price * data.discount) / 100)},-</p>
                     <br>
                     <div class="style">
                         <form action="#">
@@ -54,7 +65,7 @@ function showProduct(data) {
                     <div id="center">
                         <a href="#">
                             <div class="knap">
-                                <h2>Add To Basket</h2>
+                                <h2 class="kategori_tekst">Add To Basket</h2>
                             </div>
                         </a>
                     </div>
